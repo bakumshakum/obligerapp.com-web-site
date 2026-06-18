@@ -1,158 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Reset Your Obliger Password</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #001F6A;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .card {
-    background: #FFFFFF;
-    border-radius: 16px;
-    padding: 32px 28px;
-    max-width: 380px;
-    width: 100%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  }
-  h1 {
-    color: #001F6A;
-    font-size: 22px;
-    margin-bottom: 8px;
-  }
-  p.subtitle {
-    color: #546E9A;
-    font-size: 14px;
-    margin-bottom: 24px;
-    line-height: 1.4;
-  }
-  label {
-    display: block;
-    color: #001F6A;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    margin-top: 16px;
-  }
-  .password-wrap {
-    position: relative;
-  }
-  input[type="password"], input[type="text"] {
-    width: 100%;
-    padding: 12px 40px 12px 14px;
-    border: 1px solid #D0D8E8;
-    border-radius: 8px;
-    font-size: 15px;
-    color: #001F6A;
-  }
-  input:focus {
-    outline: none;
-    border-color: #4D8CFF;
-  }
-  .toggle-btn {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: #546E9A;
-    font-size: 13px;
-    cursor: pointer;
-    padding: 4px;
-  }
-  .error {
-    color: #FF5252;
-    font-size: 13px;
-    margin-top: 6px;
-    display: none;
-  }
-  button.submit {
-    width: 100%;
-    background: #4D8CFF;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 14px;
-    font-size: 15px;
-    font-weight: 600;
-    margin-top: 24px;
-    cursor: pointer;
-  }
-  button.submit:disabled {
-    opacity: 0.6;
-    cursor: default;
-  }
-  .success {
-    text-align: center;
-  }
-  .success .icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-  }
-  .success h1 {
-    color: #001F6A;
-  }
-  .success p {
-    color: #546E9A;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-top: 8px;
-  }
-  .loading {
-    text-align: center;
-    color: #546E9A;
-    font-size: 14px;
-  }
-  .invalid {
-    text-align: center;
-  }
-  .invalid h1 { color: #FF5252; }
-  .invalid p {
-    color: #546E9A;
-    font-size: 14px;
-    margin-top: 8px;
-    line-height: 1.5;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Your Obliger Password</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #001F6A;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 32px 28px;
+      max-width: 380px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      color: #001F6A;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      color: #546E9A;
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    label {
+      display: block;
+      color: #001F6A;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      margin-top: 16px;
+    }
+
+    .password-wrap {
+      position: relative;
+    }
+
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 40px 12px 14px;
+      border: 1px solid #D0D8E8;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #001F6A;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #4D8CFF;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #546E9A;
+      font-size: 13px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .error {
+      color: #FF5252;
+      font-size: 13px;
+      margin-top: 6px;
+      display: none;
+    }
+
+    button.submit {
+      width: 100%;
+      background: #4D8CFF;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 24px;
+      cursor: pointer;
+    }
+
+    button.submit:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .success {
+      text-align: center;
+    }
+
+    .success .icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .success h1 {
+      color: #001F6A;
+    }
+
+    .success p {
+      color: #546E9A;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    .loading {
+      text-align: center;
+      color: #546E9A;
+      font-size: 14px;
+    }
+
+    .invalid {
+      text-align: center;
+    }
+
+    .invalid h1 {
+      color: #FF5252;
+    }
+
+    .invalid p {
+      color: #546E9A;
+      font-size: 14px;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="card" id="card">
-  <div class="loading" id="loadingState">
-    <p>Verifying your reset link...</p>
+  <div class="card" id="card">
+    <div class="loading" id="loadingState">
+      <p>Verifying your reset link...</p>
+    </div>
   </div>
-</div>
 
-<script>
-  // ---- CONFIGURE THESE TWO VALUES ----
-  const SUPABASE_URL = 'https://lrnosirsdscoscgnfueq.supabase.co';
-  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxybm9zaXJzZHNjb3NjZ25mdWVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE0MjksImV4cCI6MjA5NzExNzQyOX0.SfhjXd5I_QcWTMNs8m7r2Im4BirwRGFjCCxBAU0biLU';
-  // -------------------------------------
+  <script>
+    // ---- CONFIGURE THESE TWO VALUES ----
+    const SUPABASE_URL = 'https://lrnosirsdscoscgnfueq.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxybm9zaXJzZHNjb3NjZ25mdWVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1NDE0MjksImV4cCI6MjA5NzExNzQyOX0.SfhjXd5I_QcWTMNs8m7r2Im4BirwRGFjCCxBAU0biLU';
+    // -------------------------------------
 
-  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  const card = document.getElementById('card');
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const card = document.getElementById('card');
 
-  function renderInvalid() {
-    card.innerHTML = `
+    function renderInvalid() {
+      card.innerHTML = `
       <div class="invalid">
         <h1>Link expired or invalid</h1>
         <p>This password reset link is no longer valid. Please request a new one from the Obliger app.</p>
       </div>
     `;
-  }
+    }
 
-  function renderForm() {
-    card.innerHTML = `
+    function renderForm() {
+      card.innerHTML = `
       <h1>Set a new password</h1>
       <p class="subtitle">Choose a new password for your Obliger account.</p>
 
@@ -175,92 +204,104 @@
       <button class="submit" id="submitBtn">Update Password</button>
     `;
 
-    document.querySelectorAll('.toggle-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const input = document.getElementById(btn.dataset.target);
-        if (input.type === 'password') {
-          input.type = 'text';
-          btn.textContent = 'Hide';
-        } else {
-          input.type = 'password';
-          btn.textContent = 'Show';
-        }
+      document.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const input = document.getElementById(btn.dataset.target);
+          if (input.type === 'password') {
+            input.type = 'text';
+            btn.textContent = 'Hide';
+          } else {
+            input.type = 'password';
+            btn.textContent = 'Show';
+          }
+        });
       });
-    });
 
-    document.getElementById('submitBtn').addEventListener('click', handleSubmit);
-  }
+      document.getElementById('submitBtn').addEventListener('click', handleSubmit);
+    }
 
-  function renderSuccess() {
-    card.innerHTML = `
+    function renderSuccess() {
+      card.innerHTML = `
       <div class="success">
         <div class="icon">✓</div>
         <h1>Password updated</h1>
         <p>You can now close this page and sign in with your new password in the Obliger app.</p>
       </div>
     `;
-  }
-
-  async function handleSubmit() {
-    const newPassword = document.getElementById('newPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    const newPasswordError = document.getElementById('newPasswordError');
-    const confirmPasswordError = document.getElementById('confirmPasswordError');
-    const generalError = document.getElementById('generalError');
-    const submitBtn = document.getElementById('submitBtn');
-
-    newPasswordError.style.display = 'none';
-    confirmPasswordError.style.display = 'none';
-    generalError.style.display = 'none';
-
-    let valid = true;
-    if (newPassword.length < 6) {
-      newPasswordError.style.display = 'block';
-      valid = false;
-    }
-    if (confirmPassword !== newPassword) {
-      confirmPasswordError.style.display = 'block';
-      valid = false;
-    }
-    if (!valid) return;
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Updating...';
-
-    const { error } = await supabaseClient.auth.updateUser({ password: newPassword });
-
-    if (error) {
-      generalError.textContent = error.message || 'Something went wrong. Please try again.';
-      generalError.style.display = 'block';
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Update Password';
-      return;
     }
 
-    renderSuccess();
-  }
+    async function handleSubmit() {
+      const newPassword = document.getElementById('newPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const newPasswordError = document.getElementById('newPasswordError');
+      const confirmPasswordError = document.getElementById('confirmPasswordError');
+      const generalError = document.getElementById('generalError');
+      const submitBtn = document.getElementById('submitBtn');
 
-  async function init() {
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
+      newPasswordError.style.display = 'none';
+      confirmPasswordError.style.display = 'none';
+      generalError.style.display = 'none';
 
-    if (!code) {
+      let valid = true;
+      if (newPassword.length < 6) {
+        newPasswordError.style.display = 'block';
+        valid = false;
+      }
+      if (confirmPassword !== newPassword) {
+        confirmPasswordError.style.display = 'block';
+        valid = false;
+      }
+      if (!valid) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Updating...';
+
+      const { error } = await supabaseClient.auth.updateUser({ password: newPassword });
+
+      if (error) {
+        generalError.textContent = error.message || 'Something went wrong. Please try again.';
+        generalError.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Update Password';
+        return;
+      }
+
+      renderSuccess();
+    }
+
+    async function init() {
+      const queryParams = new URLSearchParams(window.location.search);
+      const code = queryParams.get('code');
+
+      if (code) {
+        const { error } = await supabaseClient.auth.exchangeCodeForSession(code);
+        if (error) { renderInvalid(); return; }
+        renderForm();
+        return;
+      }
+
+      // Fallback: tokens arrive directly in the URL fragment
+      const hashParams = new URLSearchParams(window.location.hash.substring(1));
+      const accessToken = hashParams.get('access_token');
+      const refreshToken = hashParams.get('refresh_token');
+      const type = hashParams.get('type');
+
+      if (accessToken && refreshToken && type === 'recovery') {
+        const { error } = await supabaseClient.auth.setSession({
+          access_token: accessToken,
+          refresh_token: refreshToken
+        });
+        if (error) { renderInvalid(); return; }
+        renderForm();
+        return;
+      }
+
       renderInvalid();
-      return;
     }
 
-    const { error } = await supabaseClient.auth.exchangeCodeForSession(code);
-
-    if (error) {
-      renderInvalid();
-      return;
-    }
-
-    renderForm();
-  }
-
-  init();
-</script>
+    init();
+  </script>
 
 </body>
+
 </html>
