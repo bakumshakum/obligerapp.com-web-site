@@ -16,18 +16,18 @@
     }
     h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.25rem; }
     h2 { font-size: 1.15rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.25rem; }
-    h3 { font-size: 0.95rem; font-weight: 700; margin-top: 1.25rem; margin-bottom: 0.25rem; }
+    h3 { font-size: 1rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.25rem; }
     p { margin: 0 0 0.75rem; color: #444; font-size: 0.95rem; }
     ul { margin: 0 0 0.75rem; padding-left: 1.5rem; color: #444; font-size: 0.95rem; }
     li { margin-bottom: 0.4rem; }
     .note { font-size: 0.78rem; color: #888; font-style: italic; margin-bottom: 1.5rem; }
     .toc { margin: 1.25rem 0 2rem; }
-    .toc ol { margin: 0; padding-left: 1.25rem; color: #444; font-size: 0.95rem; }
+    .toc > ol { margin: 0; padding-left: 1.25rem; color: #444; font-size: 0.95rem; }
     .toc li { margin-bottom: 0.2rem; }
     .toc a { color: #1a7fcf; text-decoration: none; }
     .toc a:hover { text-decoration: underline; }
-    .toc ul { margin: 0.2rem 0 0.2rem; padding-left: 1.25rem; list-style-type: disc; }
-    .toc ul li { margin-bottom: 0.1rem; font-size: 0.9rem; }
+    .toc ul { margin: 0.2rem 0 0.4rem; padding-left: 1.25rem; list-style-type: disc; }
+    .toc ul li { margin-bottom: 0.1rem; font-size: 0.88rem; }
   </style>
 </head>
 <body>
@@ -35,128 +35,158 @@
   <p class="note">You can return to these instructions any time from Settings.</p>
 
   <h1>How To Use Obliger</h1>
-  <p>Obliger helps small groups stay on top of shared recurring responsibilities. Whether it's household chores, family routines, or team tasks, Obliger keeps everyone in the loop.</p>
+  <p>Obliger helps small groups manage shared recurring responsibilities. Create or join a Circle, add tasks, and everyone stays in the loop on what needs to get done.</p>
 
   <div class="toc">
     <ol>
-      <li><a href="#logging-in">Logging In</a>
+      <li><a href="#login">Logging In</a>
         <ul>
-          <li><a href="#creating-account">Creating an Account</a></li>
-          <li><a href="#signing-in">Signing In</a></li>
-          <li><a href="#forgot-password">Forgot Your Password?</a></li>
-        </ul>
-      </li>
-      <li><a href="#circles">Circles</a>
-        <ul>
-          <li><a href="#what-is-circle">What is a Circle?</a></li>
-          <li><a href="#creating-circle">Creating a Circle</a></li>
-          <li><a href="#joining-circle">Joining a Circle</a></li>
-          <li><a href="#inviting-someone">Inviting Someone</a></li>
-          <li><a href="#circle-ownership">Circle Ownership</a></li>
+          <li><a href="#login-screen">Login</a></li>
+          <li><a href="#signup-screen">Create Account</a></li>
+          <li><a href="#forgot-password">Forgot Password</a></li>
+          <li><a href="#password-reset">Password Reset</a></li>
         </ul>
       </li>
       <li><a href="#tasks">Tasks</a>
         <ul>
-          <li><a href="#what-is-task">What is a Task?</a></li>
-          <li><a href="#adding-task">Adding a Task</a></li>
-          <li><a href="#recurring-tasks">Recurring vs. One-Time Tasks</a></li>
-          <li><a href="#task-status">Task Status</a></li>
-          <li><a href="#marking-done">Marking a Task Done</a></li>
-          <li><a href="#end-recurrence">Ending a Recurrence</a></li>
-          <li><a href="#task-ownership">Task Ownership</a></li>
-          <li><a href="#editing-tasks">Editing Tasks</a></li>
-          <li><a href="#task-notifications">Notifications</a></li>
+          <li><a href="#task-list">Task List</a></li>
+          <li><a href="#task-detail">Task Detail</a></li>
+          <li><a href="#new-task">New Task</a></li>
+          <li><a href="#edit-task">Edit Task</a></li>
+        </ul>
+      </li>
+      <li><a href="#circles">Circles</a>
+        <ul>
+          <li><a href="#circle-list">Circle List</a></li>
+          <li><a href="#circle-detail">Circle Detail</a></li>
+          <li><a href="#new-circle">New Circle</a></li>
+          <li><a href="#join-circle">Join Circle</a></li>
+          <li><a href="#invite-someone">Invite Someone</a></li>
+          <li><a href="#edit-circle">Edit Circle</a></li>
         </ul>
       </li>
       <li><a href="#settings">Settings</a>
         <ul>
-          <li><a href="#profile">Editing Your Profile</a></li>
-          <li><a href="#notification-time">Notification Time</a></li>
-          <li><a href="#appearance">Appearance</a></li>
-          <li><a href="#delete-account">Deleting Your Account</a></li>
+          <li><a href="#settings-screen">Settings</a></li>
+          <li><a href="#change-password">Change Password</a></li>
+          <li><a href="#delete-account">Delete Account</a></li>
         </ul>
       </li>
     </ol>
   </div>
 
-  <h2 id="logging-in">Logging In</h2>
+  <h2 id="login">Logging In</h2>
 
-  <h3 id="creating-account">Creating an Account</h3>
-  <p>On the welcome screen, tap Sign Up. Enter your email address, choose a display name -- this is how other Circle members will see you -- and create a password. Tap Create Account and you're in.</p>
+  <h3 id="login-screen">Login</h3>
+  <p>Enter your email address and password and tap Sign In. If you don't have an account yet, tap Sign Up to create one. If you've forgotten your password, tap Forgot Password.</p>
 
-  <h3 id="signing-in">Signing In</h3>
-  <p>Enter your email and password on the Sign In screen. If you stay signed in, Obliger will open directly to your tasks on future visits.</p>
+  <h3 id="signup-screen">Create Account</h3>
+  <p>Enter your email address, a display name, and a password. Your display name is the default name other Circle members will see -- you can change it later in Settings, and you can also set a different name for each Circle you join. Tap Create Account to finish. You'll be signed in immediately.</p>
 
-  <h3 id="forgot-password">Forgot Your Password?</h3>
-  <p>Tap Forgot Password on the Sign In screen and enter your email address. You'll receive an email with a verification code. Enter that code in the app, then set a new password. Note: tap the code in the email rather than the link, since some email apps consume the link automatically before you can use it.</p>
+  <h3 id="forgot-password">Forgot Password</h3>
+  <p>Enter your email address and tap Send Code. You'll receive an email containing a verification code. Enter that code on the next screen to set a new password.</p>
+  <p>If you don't see the email, check your spam folder. When you find it, enter the code manually rather than tapping any link in the email -- some email apps consume the link automatically before you can use it.</p>
 
-  <h2 id="circles">Circles</h2>
-
-  <h3 id="what-is-circle">What is a Circle?</h3>
-  <p>A Circle is a group of people who share tasks together. You might have one Circle for your household, another for a family member, or one for a small team. You can belong to multiple Circles at once.</p>
-
-  <h3 id="creating-circle">Creating a Circle</h3>
-  <p>Tap the Circles tab and select Create Circle. Give it a name and tap Create. You'll be the owner of the Circle.</p>
-
-  <h3 id="joining-circle">Joining a Circle</h3>
-  <p>If someone has already created a Circle and wants you in it, they'll share an invite code with you. Tap Join Circle on the Circles tab, enter the code, and you'll be added as a member.</p>
-
-  <h3 id="inviting-someone">Inviting Someone</h3>
-  <p>Open a Circle and tap Invite Someone. This shows the Circle's invite code, which you can share however you like -- text, email, or in person. Anyone with the code can join as long as they have an Obliger account.</p>
-
-  <h3 id="circle-ownership">Circle Ownership</h3>
-  <p>The person who creates a Circle is its owner. Only the owner can edit the Circle's name. Owners can transfer ownership to any other Circle member by opening the Circle and tapping Change Owner, then selecting a member from the list.</p>
+  <h3 id="password-reset">Password Reset</h3>
+  <p>Enter the verification code from your email, then enter and confirm your new password. Tap Reset Password. You'll be signed in with your new password immediately.</p>
 
   <h2 id="tasks">Tasks</h2>
 
-  <h3 id="what-is-task">What is a Task?</h3>
-  <p>A Task is a responsibility that belongs to a Circle. Tasks can be one-time or recurring -- anything from "take out the trash" every week to "pay rent" every month. All members of the Circle can see and interact with every task.</p>
+  <h3 id="task-list">Task List</h3>
+  <p>The Task List is the main screen of Obliger. It shows all tasks across your Circles, with overdue and upcoming tasks sorted by due date so the most urgent items appear first.</p>
+  <p>Use the Circle selector at the top to filter tasks down to a single Circle. Tap any task to open its detail.</p>
+  <p>Tap the + button to add a new task to the currently selected Circle.</p>
 
-  <h3 id="adding-task">Adding a Task</h3>
-  <p>Open a Circle and tap the + button. Give the task a name, set whether it recurs and how often, and choose the first due date. Optionally add notes and configure who gets notified. Tap Save when done.</p>
-
-  <h3 id="recurring-tasks">Recurring vs. One-Time Tasks</h3>
-  <p>Recurring tasks automatically reset after they're marked done -- the next due date advances to the next occurrence on the schedule you set. One-time tasks are marked done and remain in history without resetting.</p>
-
-  <h3 id="task-status">Task Status</h3>
-  <p>Every task has a status that any Circle member can update:</p>
+  <h3 id="task-detail">Task Detail</h3>
+  <p>The Task Detail screen shows everything about a task and is where you take action on it.</p>
+  <p><strong>Details card.</strong> Shows the task name, which Circle it belongs to, its due date (highlighted if overdue or due today), and any notes. Two action buttons appear at the bottom of this card:</p>
   <ul>
-    <li><strong>Not Started</strong> -- the default; the task is due and no one has started it yet</li>
-    <li><strong>In Process</strong> -- someone is actively working on it, so others know it's being handled</li>
-    <li><strong>Done</strong> -- the task has been completed for this cycle</li>
+    <li><strong>Mark In Process / Back to Not Started</strong> -- toggles the task between Not Started and In Process. Use In Process to let other Circle members know you're actively working on it.</li>
+    <li><strong>Mark Done</strong> -- logs the task as complete with your name and the current time. For recurring tasks, the due date automatically advances to the next occurrence. For one-time tasks, the task is closed.</li>
   </ul>
+  <p><strong>Owner.</strong> Shows who owns the task. If you are the owner, a Change Owner button appears. Tap it to transfer ownership to any other member of the Circle. The previous owner stays in the Circle as a regular member. Only the owner can edit the task, unless the owner has allowed all members to edit it.</p>
+  <p><strong>Recurrence card</strong> (recurring tasks only). Shows the recurrence schedule and the next due date. An End Recurrence button appears at the bottom of this card. Tapping it permanently stops the task from repeating after a confirmation prompt -- this cannot be undone.</p>
+  <p><strong>History.</strong> A full log of every completion appears at the bottom of the screen, showing who marked the task done and when.</p>
+  <p>If you are the task owner, or if the owner has allowed all members to edit, an Edit button appears at the top right. If you are not the owner and editing is not enabled, the task is read-only.</p>
 
-  <h3 id="marking-done">Marking a Task Done</h3>
-  <p>Open a task and tap Mark Done. This logs the completion with your name and the current time. For recurring tasks, the due date automatically advances to the next occurrence. The History section at the bottom of each task shows a full log of who completed it and when.</p>
-  <p>If you're working on something but not finished, tap Mark In Process to let other members know. Tap Back to Not Started if plans change.</p>
+  <h3 id="new-task">New Task</h3>
+  <p>Tap the + button on the Task List to open this screen. Fill in:</p>
+  <ul>
+    <li><strong>Name</strong> -- required. What is this task?</li>
+    <li><strong>Circle</strong> -- which Circle this task belongs to. Defaults to the Circle currently selected in the Task List.</li>
+    <li><strong>Recurrence</strong> -- how often the task repeats. Set to one-time if it only needs to happen once.</li>
+    <li><strong>Due Date</strong> -- when the task is first due.</li>
+    <li><strong>Notes</strong> -- optional. Any additional context members need to know.</li>
+    <li><strong>Allow all members to edit</strong> -- when enabled, any Circle member can edit this task. When disabled, only you (the owner) can edit it.</li>
+    <li><strong>Notifications</strong> -- a list of all Circle members. Check the members who should receive push notifications when this task is due. All members are checked by default. A toggle below the list controls whether new members who join the Circle later are automatically added to the notification list.</li>
+  </ul>
+  <p>Tap Save. The task appears immediately on the Task List.</p>
 
-  <h3 id="end-recurrence">Ending a Recurrence</h3>
-  <p>To stop a recurring task from repeating, open the task and tap End Recurrence. You'll be asked to confirm since this cannot be undone. The task will remain in history but will no longer generate new occurrences.</p>
+  <h3 id="edit-task">Edit Task</h3>
+  <p>Contains the same fields as New Task. Accessible from the Task Detail screen if you are the owner, or if the owner has allowed all members to edit. Changes take effect immediately on save.</p>
+  <p>If editing is not enabled and you are not the owner, all fields appear grayed out and cannot be changed.</p>
 
-  <h3 id="task-ownership">Task Ownership</h3>
-  <p>The person who creates a task is its owner. Owners can transfer ownership to any member of the same Circle by opening the task and tapping Change Owner, then selecting a member from the list.</p>
+  <h2 id="circles">Circles</h2>
 
-  <h3 id="editing-tasks">Editing Tasks</h3>
-  <p>The task owner can always edit a task. When creating or editing a task, the owner can also allow any Circle member to edit it by enabling that option. If you're not the owner and editing is not enabled, the task details will appear in gray and cannot be changed.</p>
+  <h3 id="circle-list">Circle List</h3>
+  <p>Shows all Circles you belong to, sorted alphabetically. Tap any Circle to open its detail. Two buttons at the top let you create a new Circle or join an existing one with an invite code.</p>
 
-  <h3 id="task-notifications">Notifications</h3>
-  <p>Each task has its own notification list. By default, all Circle members are notified when a task is due. The task owner can adjust who receives notifications for each task when creating or editing it.</p>
-  <p>There is also an option to automatically notify new members who join the Circle later. When enabled, anyone who joins the Circle after the task was created will be added to the notification list automatically.</p>
-  <p>To stop all Obliger notifications, turn off notifications for Obliger in your device's Settings app.</p>
+  <h3 id="circle-detail">Circle Detail</h3>
+  <p>Shows the full picture of a Circle and its members.</p>
+  <p><strong>Join Code.</strong> Every Circle has a unique invite code. A Copy Code button copies it to your clipboard so you can share it however you like.</p>
+  <p><strong>Owner.</strong> Shows who owns the Circle. If you are the owner, a Change Owner button appears. Tap it to select any other Circle member as the new owner. The previous owner stays in the Circle as a regular member.</p>
+  <p><strong>Members.</strong> A list of everyone in the Circle, shown by their display name for that Circle.</p>
+  <p><strong>Invite Someone.</strong> Opens the Invite Someone screen where you can share the join code or send an email invitation.</p>
+  <p>If you are the Circle owner, an Edit button appears at the top right, allowing you to rename the Circle. Only the owner can edit the Circle name.</p>
+
+  <h3 id="new-circle">New Circle</h3>
+  <p>Enter a name for your Circle and tap Create. You'll be taken directly to the Circle Detail screen. You are automatically the owner, and you'll appear in the Circle under your app display name. Share the join code with people you want to add.</p>
+
+  <h3 id="join-circle">Join Circle</h3>
+  <p>Enter the invite code shared with you by a Circle owner or member. Before joining, you'll be asked to choose the display name you want to use in that Circle. It defaults to your app display name, but you can set it to anything you like -- useful when different groups know you by different names.</p>
+  <p>Your per-Circle display name is set at join time and applies only to that Circle. Changing your app display name in Settings later will not change the name you chose for a Circle you've already joined.</p>
+
+  <h3 id="invite-someone">Invite Someone</h3>
+  <p>Shows the Circle name and its join code. Two options for sharing:</p>
+  <ul>
+    <li><strong>Copy Code</strong> -- copies the join code to your clipboard. Paste it into a text message, chat, or anywhere else.</li>
+    <li><strong>Share via Email</strong> -- opens a pre-populated email in your default mail app with the Circle name and join code ready to send. Just add the recipient and tap Send.</li>
+  </ul>
+  <p>Anyone who receives the code can join by opening Obliger, tapping Join Circle on the Circles tab, and entering the code. They'll need an Obliger account to join.</p>
+
+  <h3 id="edit-circle">Edit Circle</h3>
+  <p>Accessible from the Circle Detail screen for Circle owners only. Change the Circle name and tap Save. The new name appears immediately everywhere in the app. Only the Circle owner can access this screen.</p>
 
   <h2 id="settings">Settings</h2>
 
-  <h3 id="profile">Editing Your Profile</h3>
-  <p>On the Settings screen, tap your display name or email to edit it inline. Display name changes take effect immediately across all your Circles. Email changes require confirmation -- check your new email address for a confirmation link. Your email will not update until you tap that link.</p>
+  <h3 id="settings-screen">Settings</h3>
+  <p><strong>Profile.</strong> Your display name and email are shown and editable inline. Tap either field to edit it directly on the screen. A Save button appears in the header when you make a change.</p>
+  <ul>
+    <li>Your display name here is your default name. It pre-fills the name prompt when you join a new Circle, but changing it does not affect Circles you've already joined.</li>
+    <li>Email changes require confirmation. After saving, check your new email address for a confirmation link. Your email will not update until you tap that link.</li>
+  </ul>
+  <p><strong>Notification Time.</strong> The hour of day when Obliger sends your daily push notification summary of due tasks. Each person sets their own notification time -- your preference does not affect other Circle members.</p>
+  <p><strong>Appearance.</strong> Toggle between light and dark mode, or follow your device's system setting.</p>
+  <p><strong>How To Use Obliger.</strong> Opens this guide.</p>
+  <p><strong>Privacy Policy.</strong> Opens the Obliger Privacy Policy.</p>
+  <p><strong>Terms of Use.</strong> Opens the Obliger Terms of Use.</p>
+  <p><strong>Change Password.</strong> Sends a verification code to your email to set a new password.</p>
+  <p><strong>Log Out.</strong> Signs you out of the app. Your data is preserved and you can sign back in at any time.</p>
+  <p><strong>Delete Account.</strong> Permanently deletes your account. See below.</p>
 
-  <h3 id="notification-time">Notification Time</h3>
-  <p>Obliger sends you a daily notification at a time you choose. Go to Settings and adjust the Notification Time to the hour you prefer. Each person sets their own notification time independently -- your preference does not affect other Circle members.</p>
+  <h3 id="change-password">Change Password</h3>
+  <p>Sends a verification code to your current email address. Enter the code on the Password Reset screen, then set your new password. You do not need to know your current password to complete this -- only access to your email is required.</p>
 
-  <h3 id="appearance">Appearance</h3>
-  <p>Obliger supports light and dark mode. Toggle between them in Settings under Appearance, or let it follow your device's system setting.</p>
-
-  <h3 id="delete-account">Deleting Your Account</h3>
-  <p>You can permanently delete your account from Settings by tapping Delete Account. This will remove your account, all Circles you created, and all tasks you created. Members of your Circles will lose access to those Circles and their task history. This cannot be undone.</p>
+  <h3 id="delete-account">Delete Account</h3>
+  <p>Permanently and irreversibly deletes your Obliger account. This screen requires two confirmations before anything is deleted.</p>
+  <p>When you delete your account, the following is permanently removed:</p>
+  <ul>
+    <li>Your account and profile</li>
+    <li>All Circles you created</li>
+    <li>All tasks you created</li>
+    <li>All completion history associated with your tasks</li>
+  </ul>
+  <p>Members of your Circles will immediately lose access to those Circles and their task history. There is no recovery option. If you want to hand off your Circles or tasks before leaving, use Change Owner on each Circle and task first.</p>
 
 </body>
 </html>
