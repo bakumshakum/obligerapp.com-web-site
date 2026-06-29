@@ -15,34 +15,148 @@
       font-size: 16px;
     }
     h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.25rem; }
-    h2 { font-size: 1.05rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.35rem; }
+    h2 { font-size: 1.15rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.25rem; }
+    h3 { font-size: 0.95rem; font-weight: 700; margin-top: 1.25rem; margin-bottom: 0.25rem; }
     p { margin: 0 0 0.75rem; color: #444; font-size: 0.95rem; }
+    ul { margin: 0 0 0.75rem; padding-left: 1.5rem; color: #444; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
     .note { font-size: 0.78rem; color: #888; font-style: italic; margin-bottom: 1.5rem; }
+    .toc { margin: 1.25rem 0 2rem; }
+    .toc ol { margin: 0; padding-left: 1.25rem; color: #444; font-size: 0.95rem; }
+    .toc li { margin-bottom: 0.2rem; }
+    .toc a { color: #1a7fcf; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .toc ul { margin: 0.2rem 0 0.2rem; padding-left: 1.25rem; list-style-type: disc; }
+    .toc ul li { margin-bottom: 0.1rem; font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
-  <p class="note">You can find these instructions any time under Settings.</p>
+  <p class="note">You can return to these instructions any time from Settings.</p>
 
   <h1>How To Use Obliger</h1>
+  <p>Obliger helps small groups stay on top of shared recurring responsibilities. Whether it's household chores, family routines, or team tasks, Obliger keeps everyone in the loop.</p>
 
-  <h2>Welcome</h2>
-  <p>Obliger helps small groups stay on top of shared recurring responsibilities.</p>
+  <div class="toc">
+    <ol>
+      <li><a href="#logging-in">Logging In</a>
+        <ul>
+          <li><a href="#creating-account">Creating an Account</a></li>
+          <li><a href="#signing-in">Signing In</a></li>
+          <li><a href="#forgot-password">Forgot Your Password?</a></li>
+        </ul>
+      </li>
+      <li><a href="#circles">Circles</a>
+        <ul>
+          <li><a href="#what-is-circle">What is a Circle?</a></li>
+          <li><a href="#creating-circle">Creating a Circle</a></li>
+          <li><a href="#joining-circle">Joining a Circle</a></li>
+          <li><a href="#inviting-someone">Inviting Someone</a></li>
+          <li><a href="#circle-ownership">Circle Ownership</a></li>
+        </ul>
+      </li>
+      <li><a href="#tasks">Tasks</a>
+        <ul>
+          <li><a href="#what-is-task">What is a Task?</a></li>
+          <li><a href="#adding-task">Adding a Task</a></li>
+          <li><a href="#recurring-tasks">Recurring vs. One-Time Tasks</a></li>
+          <li><a href="#task-status">Task Status</a></li>
+          <li><a href="#marking-done">Marking a Task Done</a></li>
+          <li><a href="#end-recurrence">Ending a Recurrence</a></li>
+          <li><a href="#task-ownership">Task Ownership</a></li>
+          <li><a href="#editing-tasks">Editing Tasks</a></li>
+          <li><a href="#task-notifications">Notifications</a></li>
+        </ul>
+      </li>
+      <li><a href="#settings">Settings</a>
+        <ul>
+          <li><a href="#profile">Editing Your Profile</a></li>
+          <li><a href="#notification-time">Notification Time</a></li>
+          <li><a href="#appearance">Appearance</a></li>
+          <li><a href="#delete-account">Deleting Your Account</a></li>
+        </ul>
+      </li>
+    </ol>
+  </div>
 
-  <h2>Circles</h2>
-  <p>A Circle is a group of people who share tasks together.</p>
+  <h2 id="logging-in">Logging In</h2>
 
-  <h2>Tasks</h2>
-  <p>Tasks are recurring responsibilities that belong to a Circle.</p>
+  <h3 id="creating-account">Creating an Account</h3>
+  <p>On the welcome screen, tap Sign Up. Enter your email address, choose a display name -- this is how other Circle members will see you -- and create a password. Tap Create Account and you're in.</p>
 
-  <h2>Checking In</h2>
-  <p></p>
+  <h3 id="signing-in">Signing In</h3>
+  <p>Enter your email and password on the Sign In screen. If you stay signed in, Obliger will open directly to your tasks on future visits.</p>
 
-  <h2>Notifications</h2>
-  <p></p>
+  <h3 id="forgot-password">Forgot Your Password?</h3>
+  <p>Tap Forgot Password on the Sign In screen and enter your email address. You'll receive an email with a verification code. Enter that code in the app, then set a new password. Note: tap the code in the email rather than the link, since some email apps consume the link automatically before you can use it.</p>
 
-  <h2>Settings</h2>
-  <p></p>
+  <h2 id="circles">Circles</h2>
+
+  <h3 id="what-is-circle">What is a Circle?</h3>
+  <p>A Circle is a group of people who share tasks together. You might have one Circle for your household, another for a family member, or one for a small team. You can belong to multiple Circles at once.</p>
+
+  <h3 id="creating-circle">Creating a Circle</h3>
+  <p>Tap the Circles tab and select Create Circle. Give it a name and tap Create. You'll be the owner of the Circle.</p>
+
+  <h3 id="joining-circle">Joining a Circle</h3>
+  <p>If someone has already created a Circle and wants you in it, they'll share an invite code with you. Tap Join Circle on the Circles tab, enter the code, and you'll be added as a member.</p>
+
+  <h3 id="inviting-someone">Inviting Someone</h3>
+  <p>Open a Circle and tap Invite Someone. This shows the Circle's invite code, which you can share however you like -- text, email, or in person. Anyone with the code can join as long as they have an Obliger account.</p>
+
+  <h3 id="circle-ownership">Circle Ownership</h3>
+  <p>The person who creates a Circle is its owner. Only the owner can edit the Circle's name. Owners can transfer ownership to any other Circle member by opening the Circle and tapping Change Owner, then selecting a member from the list.</p>
+
+  <h2 id="tasks">Tasks</h2>
+
+  <h3 id="what-is-task">What is a Task?</h3>
+  <p>A Task is a responsibility that belongs to a Circle. Tasks can be one-time or recurring -- anything from "take out the trash" every week to "pay rent" every month. All members of the Circle can see and interact with every task.</p>
+
+  <h3 id="adding-task">Adding a Task</h3>
+  <p>Open a Circle and tap the + button. Give the task a name, set whether it recurs and how often, and choose the first due date. Optionally add notes and configure who gets notified. Tap Save when done.</p>
+
+  <h3 id="recurring-tasks">Recurring vs. One-Time Tasks</h3>
+  <p>Recurring tasks automatically reset after they're marked done -- the next due date advances to the next occurrence on the schedule you set. One-time tasks are marked done and remain in history without resetting.</p>
+
+  <h3 id="task-status">Task Status</h3>
+  <p>Every task has a status that any Circle member can update:</p>
+  <ul>
+    <li><strong>Not Started</strong> -- the default; the task is due and no one has started it yet</li>
+    <li><strong>In Process</strong> -- someone is actively working on it, so others know it's being handled</li>
+    <li><strong>Done</strong> -- the task has been completed for this cycle</li>
+  </ul>
+
+  <h3 id="marking-done">Marking a Task Done</h3>
+  <p>Open a task and tap Mark Done. This logs the completion with your name and the current time. For recurring tasks, the due date automatically advances to the next occurrence. The History section at the bottom of each task shows a full log of who completed it and when.</p>
+  <p>If you're working on something but not finished, tap Mark In Process to let other members know. Tap Back to Not Started if plans change.</p>
+
+  <h3 id="end-recurrence">Ending a Recurrence</h3>
+  <p>To stop a recurring task from repeating, open the task and tap End Recurrence. You'll be asked to confirm since this cannot be undone. The task will remain in history but will no longer generate new occurrences.</p>
+
+  <h3 id="task-ownership">Task Ownership</h3>
+  <p>The person who creates a task is its owner. Owners can transfer ownership to any member of the same Circle by opening the task and tapping Change Owner, then selecting a member from the list.</p>
+
+  <h3 id="editing-tasks">Editing Tasks</h3>
+  <p>The task owner can always edit a task. When creating or editing a task, the owner can also allow any Circle member to edit it by enabling that option. If you're not the owner and editing is not enabled, the task details will appear in gray and cannot be changed.</p>
+
+  <h3 id="task-notifications">Notifications</h3>
+  <p>Each task has its own notification list. By default, all Circle members are notified when a task is due. The task owner can adjust who receives notifications for each task when creating or editing it.</p>
+  <p>There is also an option to automatically notify new members who join the Circle later. When enabled, anyone who joins the Circle after the task was created will be added to the notification list automatically.</p>
+  <p>To stop all Obliger notifications, turn off notifications for Obliger in your device's Settings app.</p>
+
+  <h2 id="settings">Settings</h2>
+
+  <h3 id="profile">Editing Your Profile</h3>
+  <p>On the Settings screen, tap your display name or email to edit it inline. Display name changes take effect immediately across all your Circles. Email changes require confirmation -- check your new email address for a confirmation link. Your email will not update until you tap that link.</p>
+
+  <h3 id="notification-time">Notification Time</h3>
+  <p>Obliger sends you a daily notification at a time you choose. Go to Settings and adjust the Notification Time to the hour you prefer. Each person sets their own notification time independently -- your preference does not affect other Circle members.</p>
+
+  <h3 id="appearance">Appearance</h3>
+  <p>Obliger supports light and dark mode. Toggle between them in Settings under Appearance, or let it follow your device's system setting.</p>
+
+  <h3 id="delete-account">Deleting Your Account</h3>
+  <p>You can permanently delete your account from Settings by tapping Delete Account. This will remove your account, all Circles you created, and all tasks you created. Members of your Circles will lose access to those Circles and their task history. This cannot be undone.</p>
 
 </body>
 </html>
