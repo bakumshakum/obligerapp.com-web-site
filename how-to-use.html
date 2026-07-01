@@ -21,6 +21,20 @@
     ul { margin: 0 0 0.75rem; padding-left: 1.5rem; color: #444; font-size: 0.95rem; }
     li { margin-bottom: 0.4rem; }
     .note { font-size: 0.78rem; color: #888; font-style: italic; margin-bottom: 1.5rem; }
+
+    .quickstart { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem 1.5rem 1.4rem; margin: 1.5rem 0 2rem; }
+    .quickstart h2 { border: none; margin-top: 0; margin-bottom: 0.75rem; font-size: 1.15rem; }
+    .quickstart ol { margin: 0; padding-left: 0; list-style: none; counter-reset: qs; }
+    .quickstart li { margin-bottom: 0.9rem; padding-left: 2.4rem; position: relative; color: #1a1a1a; font-size: 0.98rem; }
+    .quickstart li:last-child { margin-bottom: 0; }
+    .quickstart li::before { counter-increment: qs; content: counter(qs); position: absolute; left: 0; top: -0.1rem; width: 1.7rem; height: 1.7rem; background: #1a7fcf; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+    .quickstart li strong { font-weight: 700; }
+    .quickstart li span { display: block; color: #555; font-size: 0.9rem; margin-top: 0.1rem; }
+    .quickstart a { color: #1a7fcf; text-decoration: none; }
+
+    .callout { background: #fffaf0; border-left: 3px solid #dd9b3c; border-radius: 4px; padding: 0.85rem 1.1rem; margin: 1.5rem 0; font-size: 0.92rem; color: #5a4a2a; }
+    .callout strong { color: #3a2f18; }
+
     .toc { margin: 1.25rem 0 2rem; }
     .toc > ol { margin: 0; padding-left: 1.25rem; color: #444; font-size: 0.95rem; }
     .toc li { margin-bottom: 0.2rem; }
@@ -28,6 +42,7 @@
     .toc a:hover { text-decoration: underline; }
     .toc ul { margin: 0.2rem 0 0.4rem; padding-left: 1.25rem; list-style-type: disc; }
     .toc ul li { margin-bottom: 0.1rem; font-size: 0.88rem; }
+    .ref-heading { margin-top: 3rem; }
   </style>
 </head>
 <body>
@@ -35,7 +50,24 @@
   <p class="note">You can return to these instructions any time from Settings.</p>
 
   <h1>How To Use Obliger</h1>
-  <p>Obliger helps small groups manage shared recurring responsibilities. Create or join a Circle, add tasks, and everyone stays in the loop on what needs to get done.</p>
+  <p>Obliger helps a small group stay on top of shared recurring responsibilities -- chores, family routines, caregiving -- so everyone can see what needs doing and who has handled it.</p>
+
+  <div class="quickstart">
+    <h2>Quick Start</h2>
+    <ol>
+      <li><strong>Join a Circle</strong><span>Got an invite code? Tap Join Circle on the Circles tab and enter it. No code? Tap Create Circle to start your own and invite others.</span></li>
+      <li><strong>See what needs doing</strong><span>Your Circle's shared tasks are on the Tasks tab. Tap any task to open it.</span></li>
+      <li><strong>Check in when you do one</strong><span>Open a task and tap Mark Done. Everyone in the Circle sees it's handled.</span></li>
+      <li><strong>Set your reminder time</strong><span>Obliger nudges you once a day about what's due. Pick the hour in Settings.</span></li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <strong>Good to know:</strong> Obliger sends reminders once a day, at the single time you choose in Settings -- not at a specific time per task. If a task is due, it shows up in that day's reminder. There's no separate alarm clock for each task.
+  </div>
+
+  <h2 class="ref-heading" id="reference">Full Guide</h2>
+  <p>The rest of this page explains every screen in detail.</p>
 
   <div class="toc">
     <ol>
@@ -165,7 +197,7 @@
     <li>Your display name here is your default name. It pre-fills the name prompt when you join a new Circle, but changing it does not affect Circles you've already joined.</li>
     <li>Email changes require confirmation. After saving, check your new email address for a confirmation link. Your email will not update until you tap that link.</li>
   </ul>
-  <p><strong>Notification Time.</strong> The hour of day when Obliger sends your daily push notification summary of due tasks. Each person sets their own notification time -- your preference does not affect other Circle members.</p>
+  <p><strong>Notification Time.</strong> The single hour of day when Obliger sends your daily reminder about tasks that are due. Each person sets their own notification time -- your preference does not affect other Circle members. This is one time for all your tasks, not a separate time per task.</p>
   <p><strong>Appearance.</strong> Toggle between light and dark mode, or follow your device's system setting.</p>
   <p><strong>How To Use Obliger.</strong> Opens this guide.</p>
   <p><strong>Privacy Policy.</strong> Opens the Obliger Privacy Policy.</p>
