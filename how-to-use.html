@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,49 +15,232 @@
       line-height: 1.6;
       font-size: 16px;
     }
-    h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.25rem; }
-    h2 { font-size: 1.15rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.25rem; }
-    h3 { font-size: 1rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.25rem; }
-    p { margin: 0 0 0.75rem; color: #444; font-size: 0.95rem; }
-    ul { margin: 0 0 0.75rem; padding-left: 1.5rem; color: #444; font-size: 0.95rem; }
-    li { margin-bottom: 0.4rem; }
-    .note { font-size: 0.78rem; color: #888; font-style: italic; margin-bottom: 1.5rem; }
 
-    .quickstart { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem 1.5rem 1.4rem; margin: 1.5rem 0 2rem; }
-    .quickstart h2 { border: none; margin-top: 0; margin-bottom: 0.75rem; font-size: 1.15rem; }
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
 
-    .qs-intro { text-align: center; font-size: 1rem; color: #1a1a1a; margin: 0 auto 1.25rem; max-width: 34rem; }
-    .use-cases { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; }
-    .use-case { flex: 1 1 9rem; min-width: 8.5rem; }
-    .use-case h3 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #1a7fcf; margin: 0 0 0.5rem; text-align: center; }
-    .use-case ul { list-style: disc; margin: 0; padding-left: 1.2rem; }
-    .use-case li { font-size: 0.88rem; color: #555; margin-bottom: 0.3rem; }
-    .quickstart ol { margin: 0; padding-left: 0; list-style: none; counter-reset: qs; }
-    .quickstart ol li { margin-bottom: 0.9rem; padding-left: 2.4rem; position: relative; color: #1a1a1a; font-size: 0.98rem; }
-    .quickstart ol li:last-child { margin-bottom: 0; }
-    .quickstart ol li::before { counter-increment: qs; content: counter(qs); position: absolute; left: 0; top: -0.1rem; width: 1.7rem; height: 1.7rem; background: #1a7fcf; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
-    .quickstart ol li strong { font-weight: 700; }
-    .quickstart ol li span { display: block; color: #555; font-size: 0.9rem; margin-top: 0.1rem; }
-    .quickstart a { color: #1a7fcf; text-decoration: none; }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.25rem;
+    }
 
-    .callout { background: #fffaf0; border-left: 3px solid #dd9b3c; border-radius: 4px; padding: 0.85rem 1.1rem; margin: 1.5rem 0; font-size: 0.92rem; color: #5a4a2a; }
-    .callout strong { color: #3a2f18; }
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
 
-    .toc { margin: 1.25rem 0 2rem; }
-    .toc > ol { margin: 0; padding-left: 1.25rem; color: #444; font-size: 0.95rem; }
-    .toc li { margin-bottom: 0.2rem; }
-    .toc a { color: #1a7fcf; text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
-    .toc ul { margin: 0.2rem 0 0.4rem; padding-left: 1.25rem; list-style-type: disc; }
-    .toc ul li { margin-bottom: 0.1rem; font-size: 0.88rem; }
-    .ref-heading { margin-top: 3rem; }
+    p {
+      margin: 0 0 0.75rem;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0 0 0.75rem;
+      padding-left: 1.5rem;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .note {
+      font-size: 0.78rem;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .quickstart {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.5rem 1.5rem 1.4rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .quickstart h2 {
+      border: none;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.15rem;
+    }
+
+    .qs-intro {
+      text-align: center;
+      font-size: 1rem;
+      color: #1a1a1a;
+      margin: 0 auto 1.25rem;
+      max-width: 34rem;
+    }
+
+    .use-cases {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .use-case {
+      flex: 1 1 9rem;
+      min-width: 8.5rem;
+    }
+
+    .use-case h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1a7fcf;
+      margin: 0 0 0.5rem;
+      text-align: center;
+    }
+
+    .use-case ul {
+      list-style: disc;
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .use-case li {
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 0.3rem;
+    }
+
+    .quickstart ol {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      counter-reset: qs;
+    }
+
+    .quickstart ol li {
+      margin-bottom: 0.9rem;
+      padding-left: 2.4rem;
+      position: relative;
+      color: #1a1a1a;
+      font-size: 0.98rem;
+    }
+
+    .quickstart ol li:last-child {
+      margin-bottom: 0;
+    }
+
+    .quickstart ol li::before {
+      counter-increment: qs;
+      content: counter(qs);
+      position: absolute;
+      left: 0;
+      top: -0.1rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      background: #1a7fcf;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .quickstart ol li strong {
+      font-weight: 700;
+    }
+
+    .quickstart ol li span {
+      display: block;
+      color: #555;
+      font-size: 0.9rem;
+      margin-top: 0.1rem;
+    }
+
+    .quickstart a {
+      color: #1a7fcf;
+      text-decoration: none;
+    }
+
+    .callout {
+      background: #fffaf0;
+      border-left: 3px solid #dd9b3c;
+      border-radius: 4px;
+      padding: 0.85rem 1.1rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      color: #5a4a2a;
+    }
+
+    .callout strong {
+      color: #3a2f18;
+    }
+
+    .toc {
+      margin: 1.25rem 0 2rem;
+    }
+
+    .toc>ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .toc li {
+      margin-bottom: 0.2rem;
+    }
+
+    .toc a {
+      color: #1a7fcf;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .toc ul {
+      margin: 0.2rem 0 0.4rem;
+      padding-left: 1.25rem;
+      list-style-type: disc;
+    }
+
+    .toc ul li {
+      margin-bottom: 0.1rem;
+      font-size: 0.88rem;
+    }
+
+    .ref-heading {
+      margin-top: 3rem;
+    }
 
     @media (max-width: 460px) {
-      .use-cases { gap: 0.5rem; }
-      .use-case { flex: 1 1 100%; padding-bottom: 0.5rem; }
+      .use-cases {
+        gap: 0.5rem;
+      }
+
+      .use-case {
+        flex: 1 1 100%;
+        padding-bottom: 0.5rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <p class="note">You can return to these instructions any time from Settings.</p>
@@ -64,7 +248,8 @@
   <h1>How To Use Obliger</h1>
 
   <div class="quickstart">
-    <p class="qs-intro">Obliger helps groups stay on top of shared responsibilities<br>and track completion together.</p>
+    <p class="qs-intro">Obliger helps groups stay on top of shared responsibilities<br>and track completion together.
+    </p>
     <div class="use-cases">
       <div class="use-case">
         <h3>At Work</h3>
@@ -94,15 +279,21 @@
     <p class="qs-intro">And so much more....</p>
     <h2>Quick Start</h2>
     <ol>
-      <li><strong>Join a Circle</strong><span>Got an invite code? Tap Join Circle on the Circles tab and enter it. No code? Tap Create Circle to start your own and invite others.</span></li>
-      <li><strong>See what needs doing</strong><span>Your Circle's shared tasks are on the Tasks tab. Tap any task to open it.</span></li>
-      <li><strong>Check in when you do one</strong><span>Open a task and tap Mark Done. Everyone in the Circle sees it's handled.</span></li>
-      <li><strong>Set your reminder time</strong><span>Obliger nudges you once a day about what's due. Pick the hour in Settings.</span></li>
+      <li><strong>Join a Circle</strong><span>Got an invite code? Tap Join Circle on the Circles tab and enter it. No
+          code? Tap Create Circle to start your own and invite others.</span></li>
+      <li><strong>See what needs doing</strong><span>Your Circle's shared tasks are on the Tasks tab. Tap any task to
+          open it.</span></li>
+      <li><strong>Check in when you do one</strong><span>Open a task and tap Mark Done. Everyone in the Circle sees it's
+          handled.</span></li>
+      <li><strong>Set your reminder time</strong><span>Obliger nudges you once a day about what's due. Pick the hour in
+          Settings.</span></li>
     </ol>
   </div>
 
   <div class="callout">
-    <strong>Good to know:</strong> Obliger sends reminders once a day, at the single time you choose in Settings -- not at a specific time per task. If a task is due, it shows up in that day's reminder. There's no separate alarm clock for each task.
+    <strong>Good to know:</strong> Obliger sends reminders once a day, at the single time you choose in Settings -- not
+    at a specific time per task. If a task is due, it shows up in that day's reminder. There's no separate alarm clock
+    for each task.
   </div>
 
   <h2 class="ref-heading" id="reference">Full Guide</h2>
@@ -143,113 +334,163 @@
           <li><a href="#delete-account">Delete Account</a></li>
         </ul>
       </li>
+      <li><a href="#questions">Still Have Questions?</a>
+        <ul>
+          <!-- <li><a href="#FAQ">Frequently Asked Questions</a></li>-->
+          <li><a href="#ContactUs">Contact us</a></li>
+        </ul>
+      </li>
     </ol>
   </div>
 
   <h2 id="login">Logging In</h2>
 
   <h3 id="login-screen">Login</h3>
-  <p>Enter your email address and password and tap Sign In. If you don't have an account yet, tap Sign Up to create one. If you've forgotten your password, tap Forgot Password.</p>
+  <p>Enter your email address and password and tap Sign In. If you don't have an account yet, tap Sign Up to create one.
+    If you've forgotten your password, tap Forgot Password.</p>
 
   <h3 id="signup-screen">Create Account</h3>
-  <p>Enter your email address, a display name, and a password. Your display name is the default name other Circle members will see -- you can change it later in Settings, and you can also set a different name for each Circle you join. Tap Create Account to finish. You'll be signed in immediately.</p>
+  <p>Enter your email address, a display name, and a password. Your display name is the default name other Circle
+    members will see -- you can change it later in Settings, and you can also set a different name for each Circle you
+    join. Tap Create Account to finish. You'll be signed in immediately.</p>
 
   <h3 id="forgot-password">Forgot Password</h3>
-  <p>Enter your email address and tap Send Code. You'll receive an email containing a verification code. Enter that code on the next screen to set a new password.</p>
-  <p>If you don't see the email, check your spam folder. When you find it, enter the code manually rather than tapping any link in the email -- some email apps consume the link automatically before you can use it.</p>
+  <p>Enter your email address and tap Send Code. You'll receive an email containing a verification code. Enter that code
+    on the next screen to set a new password.</p>
+  <p>If you don't see the email, check your spam folder. When you find it, enter the code manually rather than tapping
+    any link in the email -- some email apps consume the link automatically before you can use it.</p>
 
   <h3 id="password-reset">Password Reset</h3>
-  <p>Enter the verification code from your email, then enter and confirm your new password. Tap Reset Password. You'll be signed in with your new password immediately.</p>
+  <p>Enter the verification code from your email, then enter and confirm your new password. Tap Reset Password. You'll
+    be signed in with your new password immediately.</p>
 
   <h2 id="tasks">Tasks</h2>
 
   <h3 id="task-list">Task List</h3>
-  <p>The Task List is the main screen of Obliger. It shows all tasks across your Circles, with overdue and upcoming tasks sorted by due date so the most urgent items appear first.</p>
+  <p>The Task List is the main screen of Obliger. It shows all tasks across your Circles, with overdue and upcoming
+    tasks sorted by due date so the most urgent items appear first.</p>
   <p>Use the Circle selector at the top to filter tasks down to a single Circle. Tap any task to open its detail.</p>
   <p>Tap the + button to add a new task to the currently selected Circle.</p>
 
   <h3 id="task-detail">Task Detail</h3>
   <p>The Task Detail screen shows everything about a task and is where you take action on it.</p>
-  <p><strong>Details card.</strong> Shows the task name, which Circle it belongs to, its due date (highlighted if overdue or due today), and any notes. Two action buttons appear at the bottom of this card:</p>
+  <p><strong>Details card.</strong> Shows the task name, which Circle it belongs to, its due date (highlighted if
+    overdue or due today), and any notes. Two action buttons appear at the bottom of this card:</p>
   <ul>
-    <li><strong>Mark In Process / Back to Not Started</strong> -- toggles the task between Not Started and In Process. Use In Process to let other Circle members know you're actively working on it.</li>
-    <li><strong>Mark Done</strong> -- logs the task as complete with your name and the current time. For recurring tasks, the due date automatically advances to the next occurrence. For one-time tasks, the task is closed.</li>
+    <li><strong>Mark In Process / Back to Not Started</strong> -- toggles the task between Not Started and In Process.
+      Use In Process to let other Circle members know you're actively working on it.</li>
+    <li><strong>Mark Done</strong> -- logs the task as complete with your name and the current time. For recurring
+      tasks, the due date automatically advances to the next occurrence. For one-time tasks, the task is closed.</li>
   </ul>
-  <p><strong>Owner.</strong> Shows who owns the task. If you are the owner, a Change Owner button appears. Tap it to transfer ownership to any other member of the Circle. The previous owner stays in the Circle as a regular member. Only the owner can edit the task, unless the owner has allowed all members to edit it.</p>
-  <p><strong>Recurrence card</strong> (recurring tasks only). Shows the recurrence schedule and the next due date. An End Recurrence button appears at the bottom of this card. Tapping it permanently stops the task from repeating after a confirmation prompt -- this cannot be undone.</p>
-  <p><strong>History.</strong> A full log of every completion appears at the bottom of the screen, showing who marked the task done and when.</p>
-  <p>If you are the task owner, or if the owner has allowed all members to edit, an Edit button appears at the top right. If you are not the owner and editing is not enabled, the task is read-only.</p>
+  <p><strong>Owner.</strong> Shows who owns the task. If you are the owner, a Change Owner button appears. Tap it to
+    transfer ownership to any other member of the Circle. The previous owner stays in the Circle as a regular member.
+    Only the owner can edit the task, unless the owner has allowed all members to edit it.</p>
+  <p><strong>Recurrence card</strong> (recurring tasks only). Shows the recurrence schedule and the next due date. An
+    End Recurrence button appears at the bottom of this card. Tapping it permanently stops the task from repeating after
+    a confirmation prompt -- this cannot be undone.</p>
+  <p><strong>History.</strong> A full log of every completion appears at the bottom of the screen, showing who marked
+    the task done and when.</p>
+  <p>If you are the task owner, or if the owner has allowed all members to edit, an Edit button appears at the top
+    right. If you are not the owner and editing is not enabled, the task is read-only.</p>
 
   <h3 id="new-task">New Task</h3>
   <p>Tap the + button on the Task List to open this screen. Fill in:</p>
   <ul>
     <li><strong>Name</strong> -- required. What is this task?</li>
-    <li><strong>Circle</strong> -- which Circle this task belongs to. Defaults to the Circle currently selected in the Task List.</li>
+    <li><strong>Circle</strong> -- which Circle this task belongs to. Defaults to the Circle currently selected in the
+      Task List.</li>
     <li><strong>Recurrence</strong> -- how often the task repeats. Set to one-time if it only needs to happen once.</li>
     <li><strong>Due Date</strong> -- when the task is first due.</li>
     <li><strong>Notes</strong> -- optional. Any additional context members need to know.</li>
-    <li><strong>Allow all members to edit</strong> -- when enabled, any Circle member can edit this task. When disabled, only you (the owner) can edit it.</li>
-    <li><strong>Notifications</strong> -- a list of all Circle members. Check the members who should receive push notifications when this task is due. All members are checked by default. A toggle below the list controls whether new members who join the Circle later are automatically added to the notification list.</li>
+    <li><strong>Allow all members to edit</strong> -- when enabled, any Circle member can edit this task. When disabled,
+      only you (the owner) can edit it.</li>
+    <li><strong>Notifications</strong> -- a list of all Circle members. Check the members who should receive push
+      notifications when this task is due. All members are checked by default. A toggle below the list controls whether
+      new members who join the Circle later are automatically added to the notification list.</li>
   </ul>
   <p>Tap Save. The task appears immediately on the Task List.</p>
 
   <h3 id="edit-task">Edit Task</h3>
-  <p>Contains the same fields as New Task. Accessible from the Task Detail screen if you are the owner, or if the owner has allowed all members to edit. Changes take effect immediately on save.</p>
+  <p>Contains the same fields as New Task. Accessible from the Task Detail screen if you are the owner, or if the owner
+    has allowed all members to edit. Changes take effect immediately on save.</p>
   <p>If editing is not enabled and you are not the owner, all fields appear grayed out and cannot be changed.</p>
 
   <h2 id="circles">Circles</h2>
 
   <h3 id="circle-list">Circle List</h3>
-  <p>Shows all Circles you belong to, sorted alphabetically. Tap any Circle to open its detail. Two buttons at the top let you create a new Circle or join an existing one with an invite code.</p>
+  <p>Shows all Circles you belong to, sorted alphabetically. Tap any Circle to open its detail. Two buttons at the top
+    let you create a new Circle or join an existing one with an invite code.</p>
 
   <h3 id="circle-detail">Circle Detail</h3>
   <p>Shows the full picture of a Circle and its members.</p>
-  <p><strong>Join Code.</strong> Every Circle has a unique invite code. A Copy Code button copies it to your clipboard so you can share it however you like.</p>
-  <p><strong>Owner.</strong> Shows who owns the Circle. If you are the owner, a Change Owner button appears. Tap it to select any other Circle member as the new owner. The previous owner stays in the Circle as a regular member.</p>
+  <p><strong>Join Code.</strong> Every Circle has a unique invite code. A Copy Code button copies it to your clipboard
+    so you can share it however you like.</p>
+  <p><strong>Owner.</strong> Shows who owns the Circle. If you are the owner, a Change Owner button appears. Tap it to
+    select any other Circle member as the new owner. The previous owner stays in the Circle as a regular member.</p>
   <p><strong>Members.</strong> A list of everyone in the Circle, shown by their display name for that Circle.</p>
-  <p><strong>Invite Someone.</strong> Opens the Invite Someone screen where you can share the join code or send an email invitation.</p>
-  <p>If you are the Circle owner, an Edit button appears at the top right, allowing you to rename the Circle. Only the owner can edit the Circle name.</p>
+  <p><strong>Invite Someone.</strong> Opens the Invite Someone screen where you can share the join code or send an email
+    invitation.</p>
+  <p>If you are the Circle owner, an Edit button appears at the top right, allowing you to rename the Circle. Only the
+    owner can edit the Circle name.</p>
 
   <h3 id="new-circle">New Circle</h3>
-  <p>Enter a name for your Circle and tap Create. You'll be taken directly to the Circle Detail screen. You are automatically the owner, and you'll appear in the Circle under your app display name. Share the join code with people you want to add.</p>
+  <p>Enter a name for your Circle and tap Create. You'll be taken directly to the Circle Detail screen. You are
+    automatically the owner, and you'll appear in the Circle under your app display name. Share the join code with
+    people you want to add.</p>
 
   <h3 id="join-circle">Join Circle</h3>
-  <p>Enter the invite code shared with you by a Circle owner or member. Before joining, you'll be asked to choose the display name you want to use in that Circle. It defaults to your app display name, but you can set it to anything you like -- useful when different groups know you by different names.</p>
-  <p>Your per-Circle display name is set at join time and applies only to that Circle. Changing your app display name in Settings later will not change the name you chose for a Circle you've already joined.</p>
+  <p>Enter the invite code shared with you by a Circle owner or member. Before joining, you'll be asked to choose the
+    display name you want to use in that Circle. It defaults to your app display name, but you can set it to anything
+    you like -- useful when different groups know you by different names.</p>
+  <p>Your per-Circle display name is set at join time and applies only to that Circle. Changing your app display name in
+    Settings later will not change the name you chose for a Circle you've already joined.</p>
 
   <h3 id="invite-someone">Invite Someone</h3>
   <p>Shows the Circle name and its join code. Two options for sharing:</p>
   <ul>
-    <li><strong>Copy Code</strong> -- copies the join code to your clipboard. Paste it into a text message, chat, or anywhere else.</li>
-    <li><strong>Share via Email</strong> -- opens a pre-populated email in your default mail app with the Circle name and join code ready to send. Just add the recipient and tap Send.</li>
+    <li><strong>Copy Code</strong> -- copies the join code to your clipboard. Paste it into a text message, chat, or
+      anywhere else.</li>
+    <li><strong>Share via Email</strong> -- opens a pre-populated email in your default mail app with the Circle name
+      and join code ready to send. Just add the recipient and tap Send.</li>
   </ul>
-  <p>Anyone who receives the code can join by opening Obliger, tapping Join Circle on the Circles tab, and entering the code. They'll need an Obliger account to join.</p>
+  <p>Anyone who receives the code can join by opening Obliger, tapping Join Circle on the Circles tab, and entering the
+    code. They'll need an Obliger account to join.</p>
 
   <h3 id="edit-circle">Edit Circle</h3>
-  <p>Accessible from the Circle Detail screen for Circle owners only. Change the Circle name and tap Save. The new name appears immediately everywhere in the app. Only the Circle owner can access this screen.</p>
+  <p>Accessible from the Circle Detail screen for Circle owners only. Change the Circle name and tap Save. The new name
+    appears immediately everywhere in the app. Only the Circle owner can access this screen.</p>
 
   <h2 id="settings">Settings</h2>
 
   <h3 id="settings-screen">Settings</h3>
-  <p><strong>Profile.</strong> Your display name and email are shown and editable inline. Tap either field to edit it directly on the screen. A Save button appears in the header when you make a change.</p>
+  <p><strong>Profile.</strong> Your display name and email are shown and editable inline. Tap either field to edit it
+    directly on the screen. A Save button appears in the header when you make a change.</p>
   <ul>
-    <li>Your display name here is your default name. It pre-fills the name prompt when you join a new Circle, but changing it does not affect Circles you've already joined.</li>
-    <li>Email changes require confirmation. After saving, check your new email address for a confirmation link. Your email will not update until you tap that link.</li>
+    <li>Your display name here is your default name. It pre-fills the name prompt when you join a new Circle, but
+      changing it does not affect Circles you've already joined.</li>
+    <li>Email changes require confirmation. After saving, check your new email address for a confirmation link. Your
+      email will not update until you tap that link.</li>
   </ul>
-  <p><strong>Notification Time.</strong> The single hour of day when Obliger sends your daily reminder about tasks that are due. Each person sets their own notification time -- your preference does not affect other Circle members. This is one time for all your tasks, not a separate time per task.</p>
+  <p><strong>Notification Time.</strong> The single hour of day when Obliger sends your daily reminder about tasks that
+    are due. Each person sets their own notification time -- your preference does not affect other Circle members. This
+    is one time for all your tasks, not a separate time per task.</p>
   <p><strong>Appearance.</strong> Toggle between light and dark mode, or follow your device's system setting.</p>
   <p><strong>How To Use Obliger.</strong> Opens this guide.</p>
   <p><strong>Privacy Policy.</strong> Opens the Obliger Privacy Policy.</p>
   <p><strong>Terms of Use.</strong> Opens the Obliger Terms of Use.</p>
   <p><strong>Change Password.</strong> Sends a verification code to your email to set a new password.</p>
-  <p><strong>Log Out.</strong> Signs you out of the app. Your data is preserved and you can sign back in at any time.</p>
+  <p><strong>Log Out.</strong> Signs you out of the app. Your data is preserved and you can sign back in at any time.
+  </p>
   <p><strong>Delete Account.</strong> Permanently deletes your account. See below.</p>
 
   <h3 id="change-password">Change Password</h3>
-  <p>Sends a verification code to your current email address. Enter the code on the Password Reset screen, then set your new password. You do not need to know your current password to complete this -- only access to your email is required.</p>
+  <p>Sends a verification code to your current email address. Enter the code on the Password Reset screen, then set your
+    new password. You do not need to know your current password to complete this -- only access to your email is
+    required.</p>
 
   <h3 id="delete-account">Delete Account</h3>
-  <p>Permanently and irreversibly deletes your Obliger account. This screen requires two confirmations before anything is deleted.</p>
+  <p>Permanently and irreversibly deletes your Obliger account. This screen requires two confirmations before anything
+    is deleted.</p>
   <p>When you delete your account, the following is permanently removed:</p>
   <ul>
     <li>Your account and profile</li>
@@ -257,7 +498,15 @@
     <li>All tasks you created</li>
     <li>All completion history associated with your tasks</li>
   </ul>
-  <p>Members of your Circles will immediately lose access to those Circles and their task history. There is no recovery option. If you want to hand off your Circles or tasks before leaving, use Change Owner on each Circle and task first.</p>
+  <p>Members of your Circles will immediately lose access to those Circles and their task history. There is no recovery
+    option. If you want to hand off your Circles or tasks before leaving, use Change Owner on each Circle and task
+    first.</p>
 
+  <h2 id="questions">I Still Have Questions</h2>
+  <!-- <h3 id="FAQ">Frequently Asked Questions</h3> -->
+  <h3 id="ContactUs">Contact Us</h3>
+  <p>If you still have questions or need assistance with Obliger in any way, please contact us at
+    contact@obligerapp.com.</p>
 </body>
+
 </html>
