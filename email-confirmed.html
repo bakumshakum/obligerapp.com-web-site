@@ -1,89 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Email Confirmed — Obliger</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Confirmed — Obliger</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-  :root {
-    --teal: #0F9B8E;
-    --mint: #E6F7F4;
-    --text: #0B2B2A;
-    --text-muted: #4A6664;
-  }
+    :root {
+      --teal: #0F9B8E;
+      --mint: #E6F7F4;
+      --text: #0B2B2A;
+      --text-muted: #4A6664;
+      --danger: #D64545;
+      --danger-bg: #FDECEC;
+    }
 
-  * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--mint);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: var(--text);
-    padding: 24px;
-  }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--mint);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      padding: 24px;
+    }
 
-  .card {
-    background: #FFFFFF;
-    border-radius: 16px;
-    padding: 48px 40px;
-    max-width: 420px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 4px 24px rgba(15, 155, 142, 0.12);
-  }
+    body.is-error {
+      background: var(--danger-bg);
+    }
 
-  .icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    background: var(--teal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(15, 155, 142, 0.12);
+    }
 
-  .icon svg {
-    width: 28px;
-    height: 28px;
-  }
+    body.is-error .card {
+      box-shadow: 0 4px 24px rgba(214, 69, 69, 0.12);
+    }
 
-  h1 {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 0 0 12px;
-  }
+    .icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  p {
-    font-size: 15px;
-    line-height: 1.5;
-    color: var(--text-muted);
-    margin: 0 0 28px;
-  }
+    body.is-error .icon {
+      background: var(--danger);
+    }
 
-  .footer {
-    margin-top: 32px;
-    font-size: 12px;
-    color: var(--text-muted);
-  }
-</style>
+    .icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin: 0 0 28px;
+    }
+
+    .footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
+
 <body>
   <div class="card">
-    <div class="icon">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 6L9 17L4 12" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+    <div class="icon" id="icon">
+      <!-- filled in by script: check for success, x for error -->
     </div>
-    <h1>Email Confirmed</h1>
-    <p>Your email address has been confirmed.</p>
+    <h1 id="heading">Email Confirmed</h1>
+    <p id="message">Your email address has been confirmed.</p>
     <div class="footer">Obliger</div>
   </div>
+
+  <script>
+    // GoTrue redirects here with either nothing (success) or an error in the
+    // URL hash fragment: #error=...&error_code=...&error_description=...
+    // This page only ever receives email-confirmation and email-change-
+    // confirmation redirects (password reset uses an in-app OTP, never a
+    // link), so only a small subset of Supabase's full error-code table can
+    // actually reach here.
+
+    var CHECK_ICON =
+      '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M20 6L9 17L4 12" stroke="#FFFFFF" stroke-width="2.5" ' +
+      'stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    var X_ICON =
+      '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M18 6L6 18M6 6l12 12" stroke="#FFFFFF" stroke-width="2.5" ' +
+      'stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    // Friendly copy for the error_code values that can actually land on this
+    // page. Anything not listed here falls back to a generic message rather
+    // than showing GoTrue's raw error_description to the user.
+    var ERROR_COPY = {
+      otp_expired: {
+        heading: 'Link Expired',
+        message: 'This confirmation link has expired. Go back to the app and request a new one.'
+      },
+      access_denied: {
+        heading: 'Link No Longer Valid',
+        message: 'This confirmation link is no longer valid — it may have already been used, or a newer request may have replaced it. Go back to the app and check your current settings, or request a new link if needed.'
+      },
+      flow_state_expired: {
+        heading: 'Link Expired',
+        message: 'This confirmation link has expired. Go back to the app and request a new one.'
+      },
+      flow_state_not_found: {
+        heading: 'Link Already Used',
+        message: 'This confirmation link has already been used or is no longer valid. Go back to the app and check your current settings.'
+      },
+      email_exists: {
+        heading: 'Email Already In Use',
+        message: 'That email address is already associated with another account. Go back to the app and try a different address.'
+      },
+      user_not_found: {
+        heading: 'Account Not Found',
+        message: 'We couldn\'t find the account this link belongs to. Go back to the app and sign in to try again.'
+      }
+    };
+
+    var DEFAULT_ERROR = {
+      heading: 'Link No Longer Valid',
+      message: 'This confirmation link is no longer valid. Go back to the app and try again.'
+    };
+
+    function parseHashParams(hash) {
+      var params = {};
+      if (!hash || hash.length < 2) return params;
+      hash.substring(1).split('&').forEach(function (pair) {
+        var idx = pair.indexOf('=');
+        if (idx === -1) return;
+        var key = decodeURIComponent(pair.substring(0, idx));
+        var value = decodeURIComponent(pair.substring(idx + 1).replace(/\+/g, ' '));
+        params[key] = value;
+      });
+      return params;
+    }
+
+    var params = parseHashParams(window.location.hash);
+    var iconEl = document.getElementById('icon');
+    var headingEl = document.getElementById('heading');
+    var messageEl = document.getElementById('message');
+
+    if (params.error) {
+      document.body.classList.add('is-error');
+      iconEl.innerHTML = X_ICON;
+      var copy = ERROR_COPY[params.error_code] || DEFAULT_ERROR;
+      headingEl.textContent = copy.heading;
+      messageEl.textContent = copy.message;
+    } else {
+      iconEl.innerHTML = CHECK_ICON;
+      headingEl.textContent = 'Email Confirmed';
+      messageEl.textContent = 'Your email address has been confirmed.';
+    }
+  </script>
 </body>
+
 </html>
