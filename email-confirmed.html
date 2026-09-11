@@ -103,12 +103,22 @@
   </div>
 
   <script>
-    // GoTrue redirects here with either nothing (success) or an error in the
-    // URL hash fragment: #error=...&error_code=...&error_description=...
+    // GoTrue redirects here on success with #access_token=&refresh_token=&
+    // expires_at=&expires_in=&token_type=&type=signup in the hash, or on
+    // failure with #error=...&error_code=...&error_description=... in the
+    // hash. This page never calls Supabase: GoTrue has already confirmed
+    // the email server-side by the time this redirect fires, so the
+    // tokens' presence (with type=signup) IS the confirmation -- nothing
+    // here needs re-validating against the backend, and there's no
+    // follow-up action (no form, no update call) that would need a
+    // session. The hash is stripped from the address bar immediately so
+    // the access_token/refresh_token never sit exposed in the URL bar or
+    // browser history.
+    //
     // This page only ever receives email-confirmation and email-change-
-    // confirmation redirects (password reset uses an in-app OTP, never a
-    // link), so only a small subset of Supabase's full error-code table can
-    // actually reach here.
+    // confirmation redirects. In-app password reset uses an OTP typed
+    // into the app; reset-password/ is a separate link-based fallback for
+    // users who open the reset link from desktop webmail instead.
 
     var CHECK_ICON =
       '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
@@ -155,34 +165,38 @@
       message: 'This confirmation link is no longer valid. Go back to the app and try again.'
     };
 
-    function parseHashParams(hash) {
-      var params = {};
-      if (!hash || hash.length < 2) return params;
-      hash.substring(1).split('&').forEach(function (pair) {
-        var idx = pair.indexOf('=');
-        if (idx === -1) return;
-        var key = decodeURIComponent(pair.substring(0, idx));
-        var value = decodeURIComponent(pair.substring(idx + 1).replace(/\+/g, ' '));
-        params[key] = value;
-      });
-      return params;
-    }
+    // Parse first, then immediately scrub the hash from the address bar --
+    // this is the step that actually matters, so it happens before any
+    // rendering logic below, regardless of what was (or wasn't) found.
+    var hashParams = new URLSearchParams(window.location.hash.substring(1));
+    history.replaceState(null, '', window.location.pathname + window.location.search);
 
-    var params = parseHashParams(window.location.hash);
     var iconEl = document.getElementById('icon');
     var headingEl = document.getElementById('heading');
     var messageEl = document.getElementById('message');
 
-    if (params.error) {
-      document.body.classList.add('is-error');
-      iconEl.innerHTML = X_ICON;
-      var copy = ERROR_COPY[params.error_code] || DEFAULT_ERROR;
-      headingEl.textContent = copy.heading;
-      messageEl.textContent = copy.message;
-    } else {
+    var accessToken = hashParams.get('access_token');
+    var type = hashParams.get('type');
+    var error = hashParams.get('error');
+    var errorCode = hashParams.get('error_code');
+
+    if (accessToken && type === 'signup') {
       iconEl.innerHTML = CHECK_ICON;
       headingEl.textContent = 'Email Confirmed';
       messageEl.textContent = 'Your email address has been confirmed.';
+    } else if (error || errorCode) {
+      document.body.classList.add('is-error');
+      iconEl.innerHTML = X_ICON;
+      var copy = ERROR_COPY[errorCode] || DEFAULT_ERROR;
+      headingEl.textContent = copy.heading;
+      messageEl.textContent = copy.message;
+    } else {
+      // Neither the success shape nor a recognized error shape -- fail
+      // closed instead of defaulting to a success message.
+      document.body.classList.add('is-error');
+      iconEl.innerHTML = X_ICON;
+      headingEl.textContent = DEFAULT_ERROR.heading;
+      messageEl.textContent = DEFAULT_ERROR.message;
     }
   </script>
 </body>
