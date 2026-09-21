@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Obliger Works</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-body: #444444;
+      --link: #1a7fcf;
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+          --bg: #0f1419;
+          --text: #e8eaed;
+          --text-body: #c9cdd3;
+          --link: #5ab0f0;
+          color-scheme: dark;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0f1419;
+      --text: #e8eaed;
+      --text-body: #c9cdd3;
+      --link: #5ab0f0;
+      color-scheme: dark;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin: 0 0 0.75rem;
+      color: var(--text-body);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--link);
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var param = new URLSearchParams(window.location.search).get('theme');
+      if (param === 'dark' || param === 'light') {
+        root.dataset.theme = param;
+      }
+      var theme = root.dataset.theme ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      var pages = ['privacy-policy.html', 'terms-of-use.html', 'usage-limits.html', 'how-to-use.html'];
+      var hosts = ['obligerapp.com', 'www.obligerapp.com', window.location.hostname];
+
+      function carryTheme() {
+        var links = document.querySelectorAll('a[href]');
+        for (var i = 0; i < links.length; i++) {
+          var raw = links[i].getAttribute('href');
+          if (!raw || raw.charAt(0) === '#' || /[?&]theme=/.test(raw)) continue;
+          var url;
+          try { url = new URL(raw, window.location.href); } catch (e) { continue; }
+          if (!/^(https?|file):$/.test(url.protocol) || hosts.indexOf(url.hostname) < 0) continue;
+          if (pages.indexOf(url.pathname.split('/').pop()) < 0) continue;
+          var hashAt = raw.indexOf('#');
+          var base = hashAt < 0 ? raw : raw.slice(0, hashAt);
+          var hash = hashAt < 0 ? '' : raw.slice(hashAt);
+          links[i].setAttribute('href', base + (base.indexOf('?') < 0 ? '?' : '&') + 'theme=' + theme + hash);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', carryTheme);
+      } else {
+        carryTheme();
+      }
+    })();
+  </script>
+
+  <h1>How Obliger Works</h1>
+
+  <p>Obliger stores everything on a server, not on your device and not peer-to-peer. When you create a task or mark
+    one done, that action goes to a cloud-based Postgres database. Every other member of your Circle reads from that
+    same database, which is what lets everyone see the same task list and the same completion history.</p>
+
+  <p><strong>Nobody in your Circle sees anything until it's saved to the server.</strong> There's no direct connection
+    between your phone and another member's phone. If your phone is off or you have no signal, your teammates just see
+    the list as it last stood.</p>
+
+  <p><strong>Updates aren't instant.</strong> When someone else completes a task, you'll see it the next time you open
+    the app or pull to refresh, not the moment it happens. Obliger is built for daily coordination, not live chat.</p>
+
+  <p><strong>Who can see what.</strong> Anyone in a Circle can see that Circle's tasks, notes, and who completed what
+    and when. Obliger has no public pages and no way for someone outside your Circles to see your data.</p>
+
+  <p><strong>Notifications.</strong> Your daily reminder is sent from our server through Apple's and Google's own push
+    notification services. We don't track your location, and we don't use analytics or advertising identifiers.</p>
+
+  <p><strong>Where your data lives.</strong> Our servers are located in the United States. We don't sell your data, and
+    we don't share it with advertisers. See our <a href="/legal/privacy-policy.html">Privacy Policy</a> for full
+    detail on what we collect and who we work with to run the app, and <a href="/how-to-use.html">How To Use
+      Obliger</a> for a walkthrough of every screen.</p>
+
+</body>
+
+</html>
