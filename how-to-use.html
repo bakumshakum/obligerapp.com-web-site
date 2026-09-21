@@ -7,12 +7,13 @@
   <title>How to Use Obliger</title>
   <style>
     :root {
-      --bg: #ffffff;
+      --bg: #F0F4FF;
+      --surface-elevated: #ffffff;
       --text: #1a1a1a;
       --text-body: #444444;
       --text-soft: #555555;
-      --text-muted: #888888;
-      --link: #1a7fcf;
+      --text-muted: #707070;
+      --link: #1873bc;
       --accent: #1a7fcf;
       --rule: #eeeeee;
       --panel-bg: #f7fafc;
@@ -28,7 +29,8 @@
 
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-          --bg: #0f1419;
+          --bg: #001F6A;
+          --surface-elevated: #0A2A80;
           --text: #e8eaed;
           --text-body: #c9cdd3;
           --text-soft: #b3b9c1;
@@ -36,11 +38,11 @@
           --link: #5ab0f0;
           --accent: #5ab0f0;
           --rule: #262d36;
-          --panel-bg: #171d25;
+          --panel-bg: var(--surface-elevated);
           --panel-border: #2b3440;
           --badge-bg: #4ea1e8;
           --badge-text: #0b1220;
-          --callout-bg: #2a2314;
+          --callout-bg: var(--surface-elevated);
           --callout-border: #dd9b3c;
           --callout-text: #e6d5b0;
           --callout-strong: #f5e6c4;
@@ -49,7 +51,8 @@
     }
 
     :root[data-theme="dark"] {
-      --bg: #0f1419;
+      --bg: #001F6A;
+      --surface-elevated: #0A2A80;
       --text: #e8eaed;
       --text-body: #c9cdd3;
       --text-soft: #b3b9c1;
@@ -57,11 +60,11 @@
       --link: #5ab0f0;
       --accent: #5ab0f0;
       --rule: #262d36;
-      --panel-bg: #171d25;
+      --panel-bg: var(--surface-elevated);
       --panel-border: #2b3440;
       --badge-bg: #4ea1e8;
       --badge-text: #0b1220;
-      --callout-bg: #2a2314;
+      --callout-bg: var(--surface-elevated);
       --callout-border: #dd9b3c;
       --callout-text: #e6d5b0;
       --callout-strong: #f5e6c4;
