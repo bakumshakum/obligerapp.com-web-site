@@ -315,7 +315,7 @@
       var theme = root.dataset.theme ||
         (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-      var pages = ['privacy-policy.html', 'terms-of-use.html', 'usage-limits.html', 'how-to-use.html'];
+      var pages = ['privacy-policy.html', 'terms-of-use.html', 'usage-limits.html', 'how-to-use.html', 'how-it-works.html'];
       var hosts = ['obligerapp.com', 'www.obligerapp.com', window.location.hostname];
 
       function carryTheme() {
@@ -403,6 +403,7 @@
       <li><a href="#login">Logging In</a>
         <ul>
           <li><a href="#login-screen">Login</a></li>
+          <li><a href="#start-trial">Try Obliger First</a></li>
           <li><a href="#signup-screen">Create Account</a></li>
           <li><a href="#forgot-password">Forgot Password</a></li>
           <li><a href="#password-reset">Password Reset</a></li>
@@ -448,6 +449,12 @@
   <h3 id="login-screen">Login</h3>
   <p>Enter your email address and password and tap Sign In. If you don't have an account yet, tap Sign Up to create one.
     If you've forgotten your password, tap Forgot Password.</p>
+
+  <h3 id="start-trial">Try Obliger First</h3>
+  <p>Tap Start Trial from the Login screen to try Obliger without creating an account. You'll be asked for your name
+    and date of birth, and Obliger sets you up with a starter Circle and an example task so you can see how everything
+    works right away. A trial account is temporary. You can convert it to a full account at any time from Settings, or
+    it will be automatically deleted after 30 days if you don't.</p>
 
   <h3 id="signup-screen">Create Account</h3>
   <p>Enter your email address, a display name, and a password. Your display name is the default name other Circle
@@ -519,7 +526,10 @@
 
   <h3 id="circle-list">Circle List</h3>
   <p>Shows all Circles you belong to, sorted alphabetically. Tap any Circle to open its detail. Two buttons at the top
-    let you create a new Circle or join an existing one with an invite code.</p>
+    let you create a new Circle or join an existing one with an invite code. New accounts start with an example Circle
+    and task already in place, so you can see how Obliger works right away. If you're using a trial account, you can
+    create more Circles of your own, but you can't join other Circles or invite anyone to yours until you convert to a
+    full account.</p>
 
   <h3 id="circle-detail">Circle Detail</h3>
   <p>Shows the full picture of a Circle and its members.</p>
@@ -576,6 +586,8 @@
     is one time for all your tasks, not a separate time per task.</p>
   <p><strong>Appearance.</strong> Toggle between light and dark mode, or follow your device's system setting.</p>
   <p><strong>How To Use Obliger.</strong> Opens this guide.</p>
+  <p><strong><a href="/how-it-works.html">How It Works</a>.</strong> Opens a page explaining where your data lives and
+    how Circles stay in sync.</p>
   <p><strong id="usage-limits">Usage Limits.</strong> To keep server costs manageable, your account can own up to 3
     Circles, belong to 5 Circles total, and a Circle can have up to 10 members. See <a
       href="https://obligerapp.com/legal/usage-limits.html">Usage Limits</a> for more.</p>
@@ -585,6 +597,8 @@
   <p><strong>Log Out.</strong> Signs you out of the app. Your data is preserved and you can sign back in at any time.
   </p>
   <p><strong>Delete Account.</strong> Permanently deletes your account. See below.</p>
+  <p>If you're using a trial account, this section shows Cancel My Trial instead, which permanently deletes your trial
+    account and its data immediately.</p>
 
   <h3 id="change-password">Change Password</h3>
   <p>Enter your current password, then your new password, and tap Save. If your current password is incorrect, the
@@ -604,6 +618,12 @@
 
   <h2 id="questions">I Still Have Questions</h2>
   <h3 id="FAQ">Frequently Asked Questions</h3>
+
+  <p><strong>What's a trial account, and what happens to it?</strong></p>
+  <p>A trial account lets you try Obliger without an email or password. Like every new account, it starts with an
+    example Circle and task. It can create more Circles like a full account can, but it can't join other Circles or
+    invite anyone until you convert it. If you don't convert or cancel it, it's automatically and permanently deleted
+    after 30 days.</p>
 
   <p><strong>Why didn't I get notifications?</strong></p>
   <p>Make sure you're signed in on the device you want to receive push notifications on. If you've signed out, that
