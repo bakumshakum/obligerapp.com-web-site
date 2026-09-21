@@ -6,12 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Usage Limits - Obliger</title>
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-body: #444444;
+      --text-muted: #888888;
+      --link: #1a7fcf;
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+          --bg: #0f1419;
+          --text: #e8eaed;
+          --text-body: #c9cdd3;
+          --text-muted: #9aa1ab;
+          --link: #5ab0f0;
+          color-scheme: dark;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0f1419;
+      --text: #e8eaed;
+      --text-body: #c9cdd3;
+      --text-muted: #9aa1ab;
+      --link: #5ab0f0;
+      color-scheme: dark;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       max-width: 680px;
       margin: 0 auto;
       padding: 2rem 1.25rem 4rem;
-      color: #1a1a1a;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       font-size: 16px;
     }
@@ -31,20 +61,20 @@
 
     p {
       margin: 0 0 0.75rem;
-      color: #444;
+      color: var(--text-body);
       font-size: 0.95rem;
     }
 
     .updated {
       font-size: 0.78rem;
-      color: #888;
+      color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
 
     ul {
       margin: 0 0 0.75rem;
       padding-left: 1.5rem;
-      color: #444;
+      color: var(--text-body);
       font-size: 0.95rem;
     }
 
@@ -53,12 +83,48 @@
     }
 
     a {
-      color: #1a7fcf;
+      color: var(--link);
     }
   </style>
 </head>
 
 <body>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var param = new URLSearchParams(window.location.search).get('theme');
+      if (param === 'dark' || param === 'light') {
+        root.dataset.theme = param;
+      }
+      var theme = root.dataset.theme ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      var pages = ['privacy-policy.html', 'terms-of-use.html', 'usage-limits.html', 'how-to-use.html'];
+      var hosts = ['obligerapp.com', 'www.obligerapp.com', window.location.hostname];
+
+      function carryTheme() {
+        var links = document.querySelectorAll('a[href]');
+        for (var i = 0; i < links.length; i++) {
+          var raw = links[i].getAttribute('href');
+          if (!raw || raw.charAt(0) === '#' || /[?&]theme=/.test(raw)) continue;
+          var url;
+          try { url = new URL(raw, window.location.href); } catch (e) { continue; }
+          if (!/^(https?|file):$/.test(url.protocol) || hosts.indexOf(url.hostname) < 0) continue;
+          if (pages.indexOf(url.pathname.split('/').pop()) < 0) continue;
+          var hashAt = raw.indexOf('#');
+          var base = hashAt < 0 ? raw : raw.slice(0, hashAt);
+          var hash = hashAt < 0 ? '' : raw.slice(hashAt);
+          links[i].setAttribute('href', base + (base.indexOf('?') < 0 ? '?' : '&') + 'theme=' + theme + hash);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', carryTheme);
+      } else {
+        carryTheme();
+      }
+    })();
+  </script>
 
   <h1 id="usage-limits">Usage Limits</h1>
   <p class="updated">Last updated: September 4, 2026</p>

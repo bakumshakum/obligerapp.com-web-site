@@ -6,12 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How to Use Obliger</title>
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-body: #444444;
+      --text-soft: #555555;
+      --text-muted: #888888;
+      --link: #1a7fcf;
+      --accent: #1a7fcf;
+      --rule: #eeeeee;
+      --panel-bg: #f7fafc;
+      --panel-border: #e2e8f0;
+      --badge-bg: #1a7fcf;
+      --badge-text: #ffffff;
+      --callout-bg: #fffaf0;
+      --callout-border: #dd9b3c;
+      --callout-text: #5a4a2a;
+      --callout-strong: #3a2f18;
+      color-scheme: light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+          --bg: #0f1419;
+          --text: #e8eaed;
+          --text-body: #c9cdd3;
+          --text-soft: #b3b9c1;
+          --text-muted: #9aa1ab;
+          --link: #5ab0f0;
+          --accent: #5ab0f0;
+          --rule: #262d36;
+          --panel-bg: #171d25;
+          --panel-border: #2b3440;
+          --badge-bg: #4ea1e8;
+          --badge-text: #0b1220;
+          --callout-bg: #2a2314;
+          --callout-border: #dd9b3c;
+          --callout-text: #e6d5b0;
+          --callout-strong: #f5e6c4;
+          color-scheme: dark;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0f1419;
+      --text: #e8eaed;
+      --text-body: #c9cdd3;
+      --text-soft: #b3b9c1;
+      --text-muted: #9aa1ab;
+      --link: #5ab0f0;
+      --accent: #5ab0f0;
+      --rule: #262d36;
+      --panel-bg: #171d25;
+      --panel-border: #2b3440;
+      --badge-bg: #4ea1e8;
+      --badge-text: #0b1220;
+      --callout-bg: #2a2314;
+      --callout-border: #dd9b3c;
+      --callout-text: #e6d5b0;
+      --callout-strong: #f5e6c4;
+      color-scheme: dark;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       max-width: 680px;
       margin: 0 auto;
       padding: 2rem 1.25rem 4rem;
-      color: #1a1a1a;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       font-size: 16px;
     }
@@ -27,7 +90,7 @@
       font-weight: 700;
       margin-top: 2.5rem;
       margin-bottom: 0.5rem;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--rule);
       padding-bottom: 0.25rem;
     }
 
@@ -40,14 +103,14 @@
 
     p {
       margin: 0 0 0.75rem;
-      color: #444;
+      color: var(--text-body);
       font-size: 0.95rem;
     }
 
     ul {
       margin: 0 0 0.75rem;
       padding-left: 1.5rem;
-      color: #444;
+      color: var(--text-body);
       font-size: 0.95rem;
     }
 
@@ -57,14 +120,14 @@
 
     .note {
       font-size: 0.78rem;
-      color: #888;
+      color: var(--text-muted);
       font-style: italic;
       margin-bottom: 1.5rem;
     }
 
     .quickstart {
-      background: #f7fafc;
-      border: 1px solid #e2e8f0;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
       border-radius: 10px;
       padding: 1.5rem 1.5rem 1.4rem;
       margin: 1.5rem 0 2rem;
@@ -80,7 +143,7 @@
     .qs-intro {
       text-align: center;
       font-size: 1rem;
-      color: #1a1a1a;
+      color: var(--text);
       margin: 0 auto 1.25rem;
       max-width: 34rem;
     }
@@ -92,7 +155,7 @@
       justify-content: center;
       margin-bottom: 1.5rem;
       padding-bottom: 1.5rem;
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid var(--panel-border);
     }
 
     .use-case {
@@ -105,7 +168,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #1a7fcf;
+      color: var(--accent);
       margin: 0 0 0.5rem;
       text-align: center;
     }
@@ -118,7 +181,7 @@
 
     .use-case li {
       font-size: 0.88rem;
-      color: #555;
+      color: var(--text-soft);
       margin-bottom: 0.3rem;
     }
 
@@ -133,7 +196,7 @@
       margin-bottom: 0.9rem;
       padding-left: 2.4rem;
       position: relative;
-      color: #1a1a1a;
+      color: var(--text);
       font-size: 0.98rem;
     }
 
@@ -149,8 +212,8 @@
       top: -0.1rem;
       width: 1.7rem;
       height: 1.7rem;
-      background: #1a7fcf;
-      color: #fff;
+      background: var(--badge-bg);
+      color: var(--badge-text);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -165,28 +228,28 @@
 
     .quickstart ol li span {
       display: block;
-      color: #555;
+      color: var(--text-soft);
       font-size: 0.9rem;
       margin-top: 0.1rem;
     }
 
     .quickstart a {
-      color: #1a7fcf;
+      color: var(--link);
       text-decoration: none;
     }
 
     .callout {
-      background: #fffaf0;
-      border-left: 3px solid #dd9b3c;
+      background: var(--callout-bg);
+      border-left: 3px solid var(--callout-border);
       border-radius: 4px;
       padding: 0.85rem 1.1rem;
       margin: 1.5rem 0;
       font-size: 0.92rem;
-      color: #5a4a2a;
+      color: var(--callout-text);
     }
 
     .callout strong {
-      color: #3a2f18;
+      color: var(--callout-strong);
     }
 
     .toc {
@@ -196,7 +259,7 @@
     .toc>ol {
       margin: 0;
       padding-left: 1.25rem;
-      color: #444;
+      color: var(--text-body);
       font-size: 0.95rem;
     }
 
@@ -205,7 +268,7 @@
     }
 
     .toc a {
-      color: #1a7fcf;
+      color: var(--link);
       text-decoration: none;
     }
 
@@ -242,6 +305,42 @@
 </head>
 
 <body>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var param = new URLSearchParams(window.location.search).get('theme');
+      if (param === 'dark' || param === 'light') {
+        root.dataset.theme = param;
+      }
+      var theme = root.dataset.theme ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      var pages = ['privacy-policy.html', 'terms-of-use.html', 'usage-limits.html', 'how-to-use.html'];
+      var hosts = ['obligerapp.com', 'www.obligerapp.com', window.location.hostname];
+
+      function carryTheme() {
+        var links = document.querySelectorAll('a[href]');
+        for (var i = 0; i < links.length; i++) {
+          var raw = links[i].getAttribute('href');
+          if (!raw || raw.charAt(0) === '#' || /[?&]theme=/.test(raw)) continue;
+          var url;
+          try { url = new URL(raw, window.location.href); } catch (e) { continue; }
+          if (!/^(https?|file):$/.test(url.protocol) || hosts.indexOf(url.hostname) < 0) continue;
+          if (pages.indexOf(url.pathname.split('/').pop()) < 0) continue;
+          var hashAt = raw.indexOf('#');
+          var base = hashAt < 0 ? raw : raw.slice(0, hashAt);
+          var hash = hashAt < 0 ? '' : raw.slice(hashAt);
+          links[i].setAttribute('href', base + (base.indexOf('?') < 0 ? '?' : '&') + 'theme=' + theme + hash);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', carryTheme);
+      } else {
+        carryTheme();
+      }
+    })();
+  </script>
 
   <p class="note">You can return to these instructions any time from Settings.</p>
 
